@@ -27,9 +27,12 @@ app.get('/rolldice',(req,res)=>{
 })
 
 app.get('/ig/:name',(req,res)=>{
+
+    const followers = ['adam','bob','abc','lucky','shradha'];
+
     const {name} = req.params;
 
-    res.render('username',{name});
+    res.render('username',{name,followers});
 })
 
 
@@ -37,4 +40,5 @@ app.get('/ig/:name',(req,res)=>{
 app.listen(port,()=>{
     console.log(`Listening on port ${port}`);
 })
+
 

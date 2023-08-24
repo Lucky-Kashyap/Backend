@@ -7,7 +7,20 @@
 </head>
 <body>
     <h1>Welcome To your profile <%= name %></h1>
+
+    <h3>Accounts that follow you..</h3>
+
+    <p> <% for(let follow of followers) { %>
+        <li><%= follow %></li> <% } %>
+    </p>
+
     <button>Follow</button>
     <button>Log in</button>
 </body>
 </html>
+
+
+
+<!-- for(let name of followers){
+    <li>name</li>
+} -->
