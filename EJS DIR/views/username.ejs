@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insta username page</title>
-</head>
+<%-include('includes/head.ejs') %>
 <body>
-    <h1>Welcome To your profile <%= name %></h1>
-
-    <h3>Accounts that follow you..</h3>
-
-    <p> <% for(let follow of followers) { %>
-        <li><%= follow %></li> <% } %>
-    </p>
-
+    <h1>Welcome to  @<%= data.name%></h1>
+   
+  
     <button>Follow</button>
     <button>Log in</button>
+    <p>Followers : <%= data.followers %>  &nbsp; &nbsp; &nbsp; <%= data.following %></p>
+    <hr>
+    <% for(let post of data.posts){ %>
+        <img src=<%= post.image %> alt="some image">
+        <p> Like : <%= post.likes%> &nbsp; &nbsp; &nbsp; Comments : <%= post.comments%></p>
+        <%} %>
+
+        <%- include('includes/footer.ejs') %>
 </body>
 </html>
 
 
-
-<!-- for(let name of followers){
-    <li>name</li>
-} -->
+ 

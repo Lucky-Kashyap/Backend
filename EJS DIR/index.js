@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const instaData = require('./data.json');
 
 const app = express();
 
@@ -28,11 +29,20 @@ app.get('/rolldice',(req,res)=>{
 
 app.get('/ig/:name',(req,res)=>{
 
-    const followers = ['adam','bob','abc','lucky','shradha'];
+    // const followers = ['adam','bob','abc','lucky','shradha'];
 
     const {name} = req.params;
+    
+    const data = instaData[name];
+    // res.render('username',{name,followers});
+    // res.render('username',{data});
 
-    res.render('username',{name,followers});
+    if(data){
+        res.render('username',{data});
+    }
+    else{
+        res.render('error');
+    }
 })
 
 
