@@ -31,24 +31,43 @@
 
 // factory function
 
-function PersonMaker(name,age){
-    const person = {
-        name:name,
-        age:age,
-        talk(){
-            console.log(`Hi my name is ${this.name}`);
-        }
-    }
+// function PersonMaker(name,age){
+//     const person = {
+//         name:name,
+//         age:age,
+//         talk(){
+//             console.log(`Hi my name is ${this.name}`);
+//         }
+//     }
 
-    return person;
+//     return person;
+// }
+
+
+// constructor 
+// doesn't return anything  & start with capital
+
+
+function Person(name,age){
+        this.name=name;
+        this.age=age;
+        console.log(this);
 }
 
+Person.prototype.talk= function(){
+    console.log(`Hi, name is ${this.name}`);
+}
+
+let p1 = new Person('adam',23);
+let p2 = new Person('eve',25);
 
 
 
-let p1 = PersonMaker('adam',25);
-
-console.log(p1);
 
 
-p1.talk();
+// let p1 = PersonMaker('adam',25);
+
+// console.log(p1);
+
+
+// p1.talk();
