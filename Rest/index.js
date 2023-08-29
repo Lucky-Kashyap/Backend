@@ -18,7 +18,7 @@ let posts = [
         username:'ajay',
         content:'I  got my first internship'
     }
-]
+] 
 
 app.use(express.urlencoded({extended:true}));
 
@@ -33,6 +33,20 @@ app.get('/posts',(req,res)=>{
     // res.send('service working well..!')
     res.render('index.ejs',{posts});
 })
+
+app.get('/posts/new',(req,res)=>{
+    res.render('new.ejs');
+})
+
+app.post('/posts',(req,res)=>{
+    // console.log(req.body)
+    let {username,content} = req.body;
+
+    posts.push({username,content});
+    res.send('post request working')
+    // res.send('index.ejs',{posts})
+});
+
 
 app.listen(port,()=>{
     console.log('Listening to port ');
