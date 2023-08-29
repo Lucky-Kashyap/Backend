@@ -7,14 +7,15 @@ const path = require('path');
 
 let posts = [
     {
+        id:1,
         username:'lucky',
         content:'I love Coding'
     },
-    {
+    {   id:2,
         username:'apniduniya',
         content:'Hardwork is important'
     },
-    {
+    {   id:3,
         username:'ajay',
         content:'I  got my first internship'
     }
@@ -43,8 +44,10 @@ app.post('/posts',(req,res)=>{
     let {username,content} = req.body;
 
     posts.push({username,content});
-    res.send('post request working')
+    // res.send('post request working');
     // res.send('index.ejs',{posts})
+
+    res.redirect('/posts');
 });
 
 
