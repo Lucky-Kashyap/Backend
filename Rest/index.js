@@ -88,12 +88,15 @@ app.get('/posts/:id/edit',(req,res)=>{
     res.render('edit.ejs',{post});
 
 })
-// app.delete('/posts/:id',(req,res)=>{
-//     let {id} = req.params;
+app.delete('/posts/:id',(req,res)=>{
+    let {id} = req.params;
 
-//     const post = posts.filter((post)=>id!==post.id);
-//     res.render('show.ejs',{post});
-// })
+    posts = posts.filter((post)=>id !==post.id);
+    // res.render('show.ejs',{post});
+    // res.redirect('/posts');
+    // res.send('delete success');
+    res.redirect('/posts');
+})
 app.listen(port,()=>{
     console.log('Listening to port ');
 })
