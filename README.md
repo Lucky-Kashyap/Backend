@@ -32,4 +32,42 @@
         else console.log("rename file");
       });
 
-- copy file
+- Delete file
+
+      fs.unlink("test.txt", (err) => {
+        if (err) console.log(err);
+        else console.log("delete file");
+      });
+
+- creating folders in Node JS
+
+      fs.mkdir("lolo", (err) => {
+        if (err) console.log(err);
+        else console.log("make directory");
+      });
+
+- Reading folders
+
+      fs.readdir("lolo", (err, files) => {
+        if (err) console.log(err);
+        else console.log(files);
+      });
+
+      // 1 for file
+      // 2 for folder
+
+- Deleting folders
+
+      fs.rmdir("lolo", (err) => {
+      if (err) console.log(err);
+      else console.log("deleted");
+      });
+
+      fs.rm("lolo", { recursive: true }, (err) => {
+        if (err) console.log(err);
+        else console.log("deleted");
+      });
+
+- synchronous APIs (Blocking vs. Non-blocking)
+
+      fs.readFileSync("abcd.txt", "utf8");

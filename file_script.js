@@ -36,7 +36,59 @@ const fs = require("fs");
 //   else console.log("append file");
 // });
 
-fs.rename("abcd.txt", "test.txt", (err) => {
-  if (err) console.log(err);
-  else console.log("rename file");
-});
+// fs.rename("abcd.txt", "test.txt", (err) => {
+//   if (err) console.log(err);
+//   else console.log("rename file");
+// });
+
+// fs.unlink("test.txt", (err) => {
+//   if (err) console.log(err);
+//   else console.log("delete file");
+// });
+
+// fs.mkdir("lolo", (err) => {
+//   if (err) console.log(err);
+//   else console.log("make directory");
+// });
+
+// fs.readdir("lolo", (err, files) => {
+//   if (err) console.log(err);
+//   else console.log(files);
+// });
+
+// fs.readdir("lolo", { withFileTypes: true }, (err, files) => {
+//   if (err) console.log(err);
+//   else console.log(files);
+// });
+
+// 1 for file
+// 2 for folder
+
+// fs.rmdir("lolo", (err) => {
+//   if (err) console.log(err);
+//   else console.log("deleted");
+// });
+
+// fs.rmdir("lolo", { recursive: true }, (err) => {
+//   if (err) console.log(err);
+//   else console.log("deleted");
+// });
+
+// fs.rm("lolo", { recursive: true }, (err) => {
+//   if (err) console.log(err);
+//   else console.log("deleted");
+// });
+
+// synchronous API
+
+// fs.writeFileSync("abcd.txt", "lucky kashyap hey hello");
+
+// console.log("created");
+
+// fs.readFileSync("hey2.txt", "utf8");
+
+const data = fs.readFileSync("abcd.txt", "utf8");
+
+console.log("read");
+
+console.log(data);
