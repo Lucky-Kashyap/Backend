@@ -19,4 +19,10 @@
       });
 
 - Update file
+
+      fs.appendFile("abcd.txt", " Lucky Kashyap", (err) => {
+        if (err) console.log(err);
+        else console.log("append file");
+      });
+
 - copy file

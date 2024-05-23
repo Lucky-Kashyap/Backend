@@ -30,3 +30,8 @@ const fs = require("fs");
 //   if (err) console.log(err);
 //   else console.log(data);
 // });
+
+fs.appendFile("abcd.txt", " Lucky Kashyap", (err) => {
+  if (err) console.log(err);
+  else console.log("append file");
+});
