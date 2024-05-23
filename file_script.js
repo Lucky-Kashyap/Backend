@@ -31,7 +31,12 @@ const fs = require("fs");
 //   else console.log(data);
 // });
 
-fs.appendFile("abcd.txt", " Lucky Kashyap", (err) => {
+// fs.appendFile("abcd.txt", " Lucky Kashyap", (err) => {
+//   if (err) console.log(err);
+//   else console.log("append file");
+// });
+
+fs.rename("abcd.txt", "test.txt", (err) => {
   if (err) console.log(err);
-  else console.log("append file");
+  else console.log("rename file");
 });

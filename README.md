@@ -25,4 +25,11 @@
         else console.log("append file");
       });
 
+- Rename file
+
+      fs.rename("abcd.txt", "test.txt", (err) => {
+        if (err) console.log(err);
+        else console.log("rename file");
+      });
+
 - copy file
