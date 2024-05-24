@@ -71,3 +71,13 @@
 - synchronous APIs (Blocking vs. Non-blocking)
 
       fs.readFileSync("abcd.txt", "utf8");
+
+## HTTP Module
+
+      const http = require("http");
+
+      var server = http.createServer(function (req, res) {
+      res.end("server runs successfully");
+      });
+
+      server.listen(3000);
