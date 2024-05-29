@@ -177,3 +177,14 @@
   - get : method
   - route : '/' path
   - handler : middleware function
+
+#### Middlewares
+
+- The function which have three parameters request, response, next called middleware
+
+  app.use((req, res, next) => {
+  console.log("Another middleware..!!!");
+
+      next();
+
+  });
