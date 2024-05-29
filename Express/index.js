@@ -1,21 +1,31 @@
 const express = require("express");
 const app = express();
 
+const expressSession = require("express-session");
+
 // console.log(app);
 
 let port = 3000;
 
-app.use((req, res, next) => {
-  console.log("hey helo from middleware");
+app.use(
+  expressSession({
+    secret: "random stuff",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log("hey helo from middleware");
 
-app.use((req, res, next) => {
-  console.log("Another middleware..!!!");
+//   next();
+// });
 
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log("Another middleware..!!!");
+
+//   next();
+// });
 
 app.get("/", (req, res) => {
   res.send("Hello World!!");
@@ -23,6 +33,14 @@ app.get("/", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.send("About Page");
+});
+app.get("/create", (req, res, next) => {
+  req.session.polo = true;
+  res.send("Done..!!!");
+});
+
+app.get("/check", (req, res, next) => {
+  console.log(req.session.polo);
 });
 
 app.get("*", (req, res) => {

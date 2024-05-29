@@ -182,9 +182,25 @@
 
 - The function which have three parameters request, response, next called middleware
 
-  app.use((req, res, next) => {
-  console.log("Another middleware..!!!");
+      app.use((req, res, next) => {
+      console.log("Another middleware..!!!");
 
-      next();
+          next();
 
-  });
+      });
+
+#### Express Session
+
+    app.use(
+      expressSession({
+        secret: "random stuff",
+        resave: false,
+        saveUninitialized: false,
+      })
+    );
+
+
+    app.get("/create", (req, res, next) => {
+      req.session.polo = true;
+      res.send("Done..!!!");
+    });
