@@ -204,3 +204,24 @@
       req.session.polo = true;
       res.send("Done..!!!");
     });
+
+#### Connect flash middleware:
+
+- ek route mein data save krke dusre route mein bhejna
+- Ex: login (Error in credentials)
+- Using this we need to configure express session
+
+      const flash = require("connect-flash");
+      app.use(flash());
+
+      app.get("/", (req, res) => {
+      req.flash("error", "Invalid credentials");
+      res.redirect("/error");
+      });
+
+      app.get("/error", (req, res) => {
+      let msg = req.flash("error");
+
+          res.send(msg);
+
+      });

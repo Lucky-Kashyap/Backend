@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const flash = require("connect-flash");
 
 const expressSession = require("express-session");
 
@@ -15,6 +16,8 @@ app.use(
   })
 );
 
+app.use(flash());
+
 // app.use((req, res, next) => {
 //   console.log("hey helo from middleware");
 
@@ -28,20 +31,29 @@ app.use(
 // });
 
 app.get("/", (req, res) => {
-  res.send("Hello World!!");
+  req.flash("error", "Invalid credentials");
+
+  // res.send("Hello World!!");
+  res.redirect("/error");
 });
 
-app.get("/about", (req, res) => {
-  res.send("About Page");
-});
-app.get("/create", (req, res, next) => {
-  req.session.polo = true;
-  res.send("Done..!!!");
+app.get("/error", (req, res) => {
+  let msg = req.flash("error");
+
+  res.send(msg);
 });
 
-app.get("/check", (req, res, next) => {
-  console.log(req.session.polo);
-});
+// app.get("/about", (req, res) => {
+//   res.send("About Page");
+// });
+// app.get("/create", (req, res, next) => {
+//   req.session.polo = true;
+//   res.send("Done..!!!");
+// });
+
+// app.get("/check", (req, res, next) => {
+//   console.log(req.session.polo);
+// });
 
 app.get("*", (req, res) => {
   res.send("if nothing works i will");
