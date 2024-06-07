@@ -1,22 +1,26 @@
 const express = require("express");
 const app = express();
-const flash = require("connect-flash");
+const cors = require("cors");
 
-const expressSession = require("express-session");
+// app.use(cors());
+
+// const flash = require("connect-flash");
+
+// const expressSession = require("express-session");
 
 // console.log(app);
 
 let port = 3000;
 
-app.use(
-  expressSession({
-    secret: "random stuff",
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+// app.use(
+//   expressSession({
+//     secret: "random stuff",
+//     resave: false,
+//     saveUninitialized: false,
+//   })
+// );
 
-app.use(flash());
+// app.use(flash());
 
 // app.use((req, res, next) => {
 //   console.log("hey helo from middleware");
@@ -31,17 +35,23 @@ app.use(flash());
 // });
 
 app.get("/", (req, res) => {
-  req.flash("error", "Invalid credentials");
+  // req.flash("error", "Invalid credentials");
 
   // res.send("Hello World!!");
-  res.redirect("/error");
+  // res.redirect("/error");
+
+  res.send("hey");
 });
 
-app.get("/error", (req, res) => {
-  let msg = req.flash("error");
-
-  res.send(msg);
+app.get("/share", cors(), (req, res, next) => {
+  res.send("hey cors");
 });
+
+// app.get("/error", (req, res) => {
+//   let msg = req.flash("error");
+
+//   res.send(msg);
+// });
 
 // app.get("/about", (req, res) => {
 //   res.send("About Page");

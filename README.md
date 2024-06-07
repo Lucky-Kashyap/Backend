@@ -225,3 +225,11 @@
           res.send(msg);
 
       });
+
+#### CORS
+
+- Use cors package
+
+      npm i cors
+
+      app.use(cors());
