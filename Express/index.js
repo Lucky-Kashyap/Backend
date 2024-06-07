@@ -1,6 +1,17 @@
 const express = require("express");
 const app = express();
-const cors = require("cors");
+
+const morgan = require("morgan");
+// const cookieParser = require("cookie-parser");
+
+// app.use(morgan("tiny"));
+
+// app.use(morgan("short"));
+app.use(morgan("combined"));
+
+// app.use(cookieParser());
+
+// const cors = require("cors");
 
 // app.use(cors());
 
@@ -43,9 +54,20 @@ app.get("/", (req, res) => {
   res.send("hey");
 });
 
-app.get("/share", cors(), (req, res, next) => {
-  res.send("hey cors");
-});
+// app.get("/cookie", (req, res, next) => {
+//   res.cookie("banned", "true");
+//   res.send("cookiee parser");
+// });
+
+// app.get("/check", (req, res, next) => {
+//   console.log(req.cookies.banned);
+
+//   res.send("checking");
+// });
+
+// app.get("/share", cors(), (req, res, next) => {
+//   res.send("hey cors");
+// });
 
 // app.get("/error", (req, res) => {
 //   let msg = req.flash("error");

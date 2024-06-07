@@ -233,3 +233,21 @@
       npm i cors
 
       app.use(cors());
+
+#### Cookie Parser:
+
+- use cookie
+
+      res.cookie("banned", "true");
+
+      console.log(req.cookies.banned);
+
+#### Use morgan:
+
+- For more info (HTTP request logger middleware for node.js)
+
+      const morgan = require("morgan");
+      app.use(morgan("tiny"));
+
+      app.use(morgan("short"));
+      app.use(morgan("combined"));
