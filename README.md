@@ -296,3 +296,41 @@
 
       res.send("something about " + username + " who is of " + age);
       });
+
+##### Server side Rendering
+
+- Use EJS template engine
+
+            npm i ejs
+
+            app.set('view engine','ejs')
+
+- create a views folder
+
+- create a view index.ejs
+
+- load the html in the ejs page
+
+- and use res.render in place of the res.send to render any page from views folder
+
+- Handle Form
+
+  - Make form in index.ejs
+  - make sure we have name attribute in all inputs nd check its method
+  - we set action='/check'
+  - And set check route in index.js file
+
+            app.get('/check',(req,res)=>{
+                  console.log(req.query);
+                  res.send('form handle');
+            })
+
+  - And for post method & make sure to include these two methods in POST method
+
+           app.use(express.json());
+           app.use(express.urlencoded({ extended: true }));
+
+            app.post('/check',(req,res)=>{
+                 console.log(req.body);
+                 res.send('form handle');
+           })

@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
 
+app.set("view engine", "ejs");
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // const morgan = require("morgan");
 // const cookieParser = require("cookie-parser");
 
@@ -56,23 +61,45 @@ app.get("/", (req, res) => {
   // console.log(req.url);
   // console.log(req.method);
 
-  res.send("Hey");
+  // res.send("Hey");
+
+  res.render("index");
 });
 
-app.get("/profile/:name", (req, res) => {
-  // console.log(req.params.name + 's page');
+app.get("/check", (req, res) => {
+  // console.log(req.query);
 
-  let { name } = req.params;
+  console.log(req.body);
 
-  console.log(name);
-  res.send("profile page " + name);
+  res.send("form handle successfully");
 });
 
-app.get("/author/:username/:age", (req, res) => {
-  let { username, age } = req.params;
+app.post("/create", (req, res) => {
+  // console.log(req.query);
 
-  res.send("something about " + username + " who is of " + age);
+  console.log(req.body);
+
+  res.send("form handle successfully");
 });
+
+// app.get("/profile", (req, res) => {
+//   res.render("profile");
+// });
+
+// app.get("/profile/:name", (req, res) => {
+// console.log(req.params.name + 's page');
+
+//   let { name } = req.params;
+
+//   console.log(name);
+//   res.send("profile page " + name);
+// });
+
+// app.get("/author/:username/:age", (req, res) => {
+//   let { username, age } = req.params;
+
+//   res.send("something about " + username + " who is of " + age);
+// });
 
 // app.get("/", (req, res) => {
 // req.flash("error", "Invalid credentials");
