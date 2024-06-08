@@ -251,3 +251,48 @@
 
       app.use(morgan("short"));
       app.use(morgan("combined"));
+
+#### Request & Response
+
+- frontEnd > BackEnd > FrontEnd
+- req : data come from browser
+- res : send via server
+
+      app.get("/", (req, res) => {
+      // console.log(req);
+      // console.log(req.params);
+      // console.log(req.body);
+      // console.log(req.cookies);
+      // console.log(req.query);
+      // console.log(req.ip);
+      // console.log(req.headers);
+      // console.log(req.url);
+      console.log(req.method);
+
+      res.send("Hey");
+      });
+
+#### Dynamic Routing
+
+- Static
+
+      app.get('/username/harsh',(req,res)=>{
+            res.send('username harsh');
+      });
+
+- Dynamic
+
+      app.get("/profile/:name", (req, res) => {
+      // console.log(req.params.name + 's page');
+
+      let { name } = req.params;
+
+      console.log(name);
+      res.send("profile page " + name);
+      });
+
+      app.get("/author/:username/:age", (req, res) => {
+      let { username, age } = req.params;
+
+      res.send("something about " + username + " who is of " + age);
+      });
