@@ -334,3 +334,33 @@
                  console.log(req.body);
                  res.send('form handle');
            })
+
+#### HTTP Methods in API Development
+
+- GET
+- POST
+- PUT
+- PATCH
+- DELETE
+
+#### Error Handling
+
+- Two types error
+
+  - top level error
+  - Reference Error (Req/Res) cycle
+
+           app.get("/", (req, res, next) => {
+                 try {
+                       res.send(hey);
+                 } catch (err) {
+                       next(err);
+                 }
+           });
+
+           app.use((err, req, res, next) => {
+           res.status(500).send(err.message);
+           // res.status(500).send("Internal Server Error");
+           });
+
+- In Express.js middleware, errors are typically handled by calling the next function with an error parameter. This passes the error to the next error-handling middleware function or to the default error handler, allowing for centralized error handling in the application.

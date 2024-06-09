@@ -50,7 +50,7 @@ let port = 3000;
 //   next();
 // });
 
-app.get("/", (req, res) => {
+app.get("/", (req, res, next) => {
   // console.log(req);
   // console.log(req.params);
   // console.log(req.body);
@@ -63,24 +63,48 @@ app.get("/", (req, res) => {
 
   // res.send("Hey");
 
-  res.render("index");
+  // res.send(hey);
+
+  try {
+    res.send(hey);
+  } catch (err) {
+    next(err);
+  }
+
+  // res.render("index");
 });
 
-app.get("/check", (req, res) => {
-  // console.log(req.query);
+// app.get("/check", (req, res) => {
+// console.log(req.query);
 
-  console.log(req.body);
+//   console.log(req.body);
 
-  res.send("form handle successfully");
-});
+//   res.send("form handle successfully");
+// });
 
-app.post("/create", (req, res) => {
-  // console.log(req.query);
+// app.post("/create", (req, res) => {
+// console.log(req.query);
 
-  console.log(req.body);
+//   console.log(req.body);
 
-  res.send("form handle successfully");
-});
+//   res.send("form handle successfully");
+// });
+
+// app.get("/test", (req, res) => {
+//   res.send("GET REQUEST");
+// });
+// app.post("/test", (req, res) => {
+//   res.send("POST REQUEST");
+// });
+// app.put("/test", (req, res) => {
+//   res.send("PUT REQUEST");
+// });
+// app.patch("/test", (req, res) => {
+//   res.send("PATCH REQUEST");
+// });
+// app.delete("/test", (req, res) => {
+//   res.send("DELETE REQUEST");
+// });
 
 // app.get("/profile", (req, res) => {
 //   res.render("profile");
@@ -142,6 +166,13 @@ app.post("/create", (req, res) => {
 // app.get("/check", (req, res, next) => {
 //   console.log(req.session.polo);
 // });
+
+// error handler
+
+app.use((err, req, res, next) => {
+  res.status(500).send(err.message);
+  // res.status(500).send("Internal Server Error");
+});
 
 app.get("*", (req, res) => {
   res.send("if nothing works i will");
