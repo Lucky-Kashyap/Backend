@@ -364,3 +364,23 @@
            });
 
 - In Express.js middleware, errors are typically handled by calling the next function with an error parameter. This passes the error to the next error-handling middleware function or to the default error handler, allowing for centralized error handling in the application.
+
+#### Understanding Postman
+
+- A Postman collection is a group of requests and scripts organized together. It allows users to group related API requests, organize them into folders, and include scripts and variables to automate testing and documentation processes.
+
+- Add data
+
+      let data = [1, 2, 3, 4];
+
+      app.get("/data", (req, res, next) => {
+      res.send(data);
+      });
+
+      app.post("/data/:num", (req, res, next) => {
+      // console.log(typeof req.params.num);
+
+      data.push(parseInt(req.params.num));
+
+      res.send(data);
+      });

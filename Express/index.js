@@ -50,29 +50,29 @@ let port = 3000;
 //   next();
 // });
 
-app.get("/", (req, res, next) => {
-  // console.log(req);
-  // console.log(req.params);
-  // console.log(req.body);
-  // console.log(req.cookies);
-  // console.log(req.query);
-  // console.log(req.ip);
-  // console.log(req.headers);
-  // console.log(req.url);
-  // console.log(req.method);
+// app.get("/", (req, res, next) => {
+// console.log(req);
+// console.log(req.params);
+// console.log(req.body);
+// console.log(req.cookies);
+// console.log(req.query);
+// console.log(req.ip);
+// console.log(req.headers);
+// console.log(req.url);
+// console.log(req.method);
 
-  // res.send("Hey");
+// res.send("Hey");
 
-  // res.send(hey);
+// res.send(hey);
 
-  try {
-    res.send(hey);
-  } catch (err) {
-    next(err);
-  }
+// try {
+//   res.send(hey);
+// } catch (err) {
+//   next(err);
+// }
 
-  // res.render("index");
-});
+// res.render("index");
+// });
 
 // app.get("/check", (req, res) => {
 // console.log(req.query);
@@ -169,9 +169,39 @@ app.get("/", (req, res, next) => {
 
 // error handler
 
-app.use((err, req, res, next) => {
-  res.status(500).send(err.message);
-  // res.status(500).send("Internal Server Error");
+// app.use((err, req, res, next) => {
+//   res.status(500).send(err.message);
+// res.status(500).send("Internal Server Error");
+// });
+
+app.get("/", (req, res, next) => {
+  res.send("working");
+});
+
+let data = [1, 2, 3, 4];
+
+app.get("/data", (req, res, next) => {
+  res.send(data);
+});
+
+app.post("/data/:num", (req, res, next) => {
+  // console.log(typeof req.params.num);
+
+  data.push(parseInt(req.params.num));
+
+  res.send(data);
+});
+
+app.get("/api/testing/development", (req, res) => {
+  res.send("api development testing");
+});
+
+app.get("/api/testing/development/user", (req, res) => {
+  res.send("API USER");
+});
+
+app.get("/api/testing/development/prod", (req, res) => {
+  res.send("PROD API");
 });
 
 app.get("*", (req, res) => {
