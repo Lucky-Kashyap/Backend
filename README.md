@@ -384,3 +384,9 @@
 
       res.send(data);
       });
+
+#### Khatabook (File based Project)
+
+- create file
+- delete/ update / read / Edit
+- file page
