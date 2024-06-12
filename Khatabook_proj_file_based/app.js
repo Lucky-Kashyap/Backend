@@ -14,7 +14,12 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.send("hey");
+  fs.readdir(`./files`, (err, files) => {
+    console.log(files);
+    res.render("index", { files });
+  });
+
+  // res.send("hey");
 });
 
 app.get("/create", (req, res) => {
