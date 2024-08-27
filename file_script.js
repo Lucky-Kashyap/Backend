@@ -122,3 +122,11 @@ const { exec } = require("child_process");
 
 // telegram
 // exec("start telegram://");
+
+// type command in terminal
+
+// start wattsapp://
+// start telegram://
+// start msedge
+// start firefox
+// start code
