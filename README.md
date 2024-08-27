@@ -390,3 +390,21 @@
 - create file
 - delete/ update / read / Edit
 - file page
+
+### File Module revisit
+
+- Read file
+- write file
+- Rename file name
+
+### Open any app Using Node JS
+
+- require package
+
+      const { exec } = require("child_process");
+
+- On windows
+
+      exec("start chrome");
+      exec("start msedge");
+      exec("start firefox");

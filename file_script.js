@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { exec } = require("child_process");
 
 // write file
 // read file
@@ -87,8 +88,37 @@ const fs = require("fs");
 
 // fs.readFileSync("hey2.txt", "utf8");
 
-const data = fs.readFileSync("abcd.txt", "utf8");
+// const data = fs.readFileSync("abcd.txt", "utf8");
 
-console.log("read");
+// console.log("read");
 
-console.log(data);
+// console.log(data);
+
+// fs.writeFileSync(
+//   "abcd.txt",
+//   "dobara se krdo bhai file write  node JS bhai...!!!"
+// );
+
+// const res = fs.readFileSync("abcd.txt");
+
+// console.log(res);
+
+// console.log(res.toString());
+
+// Open chrome using NODE JS
+
+// On windows
+
+// exec("start chrome");
+
+// firefox
+// exec("start firefox");
+
+// edge
+// exec("start msedge");
+
+// wattsapp
+// exec("start wattsapp://");
+
+// telegram
+// exec("start telegram://");
