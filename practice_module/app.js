@@ -5,16 +5,16 @@
 // const { add } = require("./calculate/sum");
 // const { mul } = require("./calculate/multiply");
 
-const { add, mul } = require("./calculate/index");
+// const { add, mul } = require("./calculate/index");
 
-const data = require("./data.json");
+// const data = require("./data.json");
 
-const util = require("node:util");
+// const util = require("node:util");
 
 // import { add, sub, mul, div } from "./calc.js";
 
-let a = 10;
-let b = 20;
+// let a = 10;
+// let b = 20;
 
 // console.log(data);
 
@@ -40,4 +40,4 @@ let b = 20;
 
 // console.log("Multiplication of two numbers....", mul(a, b));
 
-console.log(util);
+// console.log(util);
