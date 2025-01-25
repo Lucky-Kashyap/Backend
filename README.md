@@ -408,3 +408,7 @@
       exec("start chrome");
       exec("start msedge");
       exec("start firefox");
+
+## Building DevTinder UI
+
+- Used React for frontEnd
