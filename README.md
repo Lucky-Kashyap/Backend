@@ -419,3 +419,19 @@
 
 - Install Daisy UI
 - Add Navbar component to App.jsx
+  Install react router dom
+
+- Body
+
+  - Navbar
+  - Route / = load feed
+  - Route=/login =>Login
+  - Route= /profile => Profile
+
+- Any children routes of body will render over here
+- Create BrowserRouter > Routes > Routes=/Body > RouteChildren
+- Create an Outlet in your body component
+- Create a Footer
+- Also created pageNotFound component
+
+            <Route path="*" element={<My404Component/>}/>
