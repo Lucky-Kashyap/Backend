@@ -411,4 +411,6 @@
 
 ## Building DevTinder UI
 
-- Used React for frontEnd
+- Used React for frontEnd.
+- Remove unnecessary code & create Hello World app.
+- Created Navbar component
