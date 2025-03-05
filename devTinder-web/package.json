@@ -10,14 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@tailwindcss/postcss": "^4.0.0",
-=======
     "@tailwindcss/vite": "^4.0.9",
->>>>>>> f62bf865a6124f8334abe046b291b947aa8b7855
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwindcss": "^4.0.9"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
@@ -31,7 +26,7 @@
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
     "postcss": "^8.5.1",
-    "tailwindcss": "^4.0.0",
+    "tailwindcss": "^4.0.9",
     "vite": "^6.0.5"
   }
 }
