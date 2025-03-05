@@ -414,3 +414,8 @@
 - Used React for frontEnd.
 - Remove unnecessary code & create Hello World app.
 - Created Navbar component
+
+#### Install Daisy UI
+
+- Install Daisy UI
+- Add Navbar component to App.jsx
