@@ -13,7 +13,16 @@ async function main() {
     console.log('Connected successfully to server');
     const db = client.db(dbName);
     const collection = db.collection('user');
-    console.log(collection);
+    // console.log(collection);
+
+    const findResult = await collection.find({}).toArray();
+    console.log('Found documents =>', findResult);
+
+    // Log firstName and lastName for each document
+    findResult.forEach((doc) => {
+        console.log(`FirstName: ${doc.firstName}, LastName: ${doc.lastName}`);
+    });
+
     return 'done.';
 }
 
