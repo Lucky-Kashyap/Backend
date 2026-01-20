@@ -15,13 +15,31 @@ async function main() {
     const collection = db.collection('user');
     // console.log(collection);
 
-    const findResult = await collection.find({}).toArray();
-    console.log('Found documents =>', findResult);
+    // Insert 3 documents with different data
+    const documents = [
+        {
+            firstName: 'Rahul',
+            lastName: 'Sharma',
+            city: 'Delhi',
+            work: 'Data Scientist'
+        },
+        {
+            firstName: 'Priya',
+            lastName: 'Patel',
+            city: 'Mumbai',
+            work: 'Web Developer'
+        },
+        {
+            firstName: 'Amit',
+            lastName: 'Kumar',
+            city: 'Bangalore',
+            work: 'DevOps Engineer'
+        }
+    ];
 
-    // Log firstName and lastName for each document
-    findResult.forEach((doc) => {
-        console.log(`FirstName: ${doc.firstName}, LastName: ${doc.lastName}`);
-    });
+    const insertResult = await collection.insertMany(documents);
+    console.log('Inserted documents =>', insertResult.insertedIds);
+    console.log(`Successfully inserted ${insertResult.insertedCount} documents`);
 
     return 'done.';
 }
