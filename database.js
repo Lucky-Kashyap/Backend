@@ -15,6 +15,15 @@ async function main() {
     const collection = db.collection('user');
     // console.log(collection);
 
+    // console.log(collection);
+
+    //  const findResult = await collection.find({}).toArray();
+    //  console.log('Found documents =>', findResult);
+
+    // Log firstName and lastName for each document
+    //  findResult.forEach((doc) => {
+    //      console.log(`FirstName: ${doc.firstName}, LastName: ${doc.lastName}`);
+    //  });
     // Insert 3 documents with different data
     const documents = [
         {
