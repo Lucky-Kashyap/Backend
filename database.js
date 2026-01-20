@@ -25,30 +25,35 @@ async function main() {
     //      console.log(`FirstName: ${doc.firstName}, LastName: ${doc.lastName}`);
     //  });
     // Insert 3 documents with different data
-    const documents = [
-        {
-            firstName: 'Rahul',
-            lastName: 'Sharma',
-            city: 'Delhi',
-            work: 'Data Scientist'
-        },
-        {
-            firstName: 'Priya',
-            lastName: 'Patel',
-            city: 'Mumbai',
-            work: 'Web Developer'
-        },
-        {
-            firstName: 'Amit',
-            lastName: 'Kumar',
-            city: 'Bangalore',
-            work: 'DevOps Engineer'
-        }
-    ];
+    // const documents = [
+    //     {
+    //         firstName: 'Rahul',
+    //         lastName: 'Sharma',
+    //         city: 'Delhi',
+    //         work: 'Data Scientist'
+    //     },
+    //     {
+    //         firstName: 'Priya',
+    //         lastName: 'Patel',
+    //         city: 'Mumbai',
+    //         work: 'Web Developer'
+    //     },
+    //     {
+    //         firstName: 'Amit',
+    //         lastName: 'Kumar',
+    //         city: 'Bangalore',
+    //         work: 'DevOps Engineer'
+    //     }
+    // ];
 
-    const insertResult = await collection.insertMany(documents);
-    console.log('Inserted documents =>', insertResult.insertedIds);
-    console.log(`Successfully inserted ${insertResult.insertedCount} documents`);
+    // const insertResult = await collection.insertMany(documents);
+    // console.log('Inserted documents =>', insertResult.insertedIds);
+    // console.log(`Successfully inserted ${insertResult.insertedCount} documents`);
+
+    // const countResult = await collection.countDocuments();
+    // console.log('Total documents =>', countResult);
+
+
 
     return 'done.';
 }
